@@ -20,11 +20,13 @@ export class PersonaComponent implements OnInit {
    * constructor 
    */
   constructor() { 
-    this.nombre='Keryn';
-    this.apellido = 'García';
-    this.ciudad = 'Cereté'
+  
   }
 
+  /**
+   * getteres y setteres
+   */
+  /*
   getNombre(): string{
     return this.nombre
   }
@@ -47,10 +49,14 @@ export class PersonaComponent implements OnInit {
 
   setCiudad(ciudad: string):void{
     this.ciudad = ciudad;
-  }
+  }*/
 
   
   ngOnInit() {
+    // se asigna valor a las variables (quemado)
+    this.nombre = 'Keryn';
+    this.apellido = 'García';
+    this.ciudad = 'Cereté'
   }
 
 }
