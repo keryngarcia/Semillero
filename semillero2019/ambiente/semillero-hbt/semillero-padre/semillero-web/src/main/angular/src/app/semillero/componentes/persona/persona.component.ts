@@ -16,6 +16,7 @@ export class PersonaComponent implements OnInit {
   ciudad: string ;
   apellido: string;
 
+
   /**
    * constructor 
    */
@@ -57,6 +58,7 @@ export class PersonaComponent implements OnInit {
     this.nombre = 'Keryn';
     this.apellido = 'García';
     this.ciudad = 'Cereté'
+    
   }
 
 }

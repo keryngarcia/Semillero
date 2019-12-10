@@ -17,6 +17,9 @@ export class BienvenidaComponent implements OnInit {
   
   public urlImagen : string;
   public comicDTO : ComicDTO;
+  public lista : Array<any>;
+  public listaJson : string;
+
   
   constructor(private router : Router, private activatedRoute: ActivatedRoute, private ejemploService: EjemploService) {
     console.log("entro al constructor del componente bienvenida");
@@ -33,25 +36,105 @@ export class BienvenidaComponent implements OnInit {
     });
 
 
-    this.comicDTO = new ComicDTO();    
-    this.comicDTO.nombre = "BATAMAN";
-    this.comicDTO.editorial = "perro";
-    this.comicDTO.tematica = "no se";
-    this.comicDTO.coleccion = "norma";
-    this.comicDTO.numeroPaginas = 1;
-    this.comicDTO.estado = "INACTIVO";
-    this.comicDTO.precio = 855;
-    this.comicDTO.cantidad = 1;
+    this.comicDTO = new ComicDTO(); 
+    this.comicDTO.id = "1";    
+    this.comicDTO.nombre = "BATMAN";
+    this.comicDTO.editorial = "marvel";
+    this.comicDTO.tematica = "ACCION";
+    //this.comicDTO.coleccion = "norma";
+    this.comicDTO.numeroPaginas = 50;
+    this.comicDTO.estado = "ACTIVO";
+    this.comicDTO.precio = 60,500.99;
+    //this.comicDTO.cantidad = 1;
     this.comicDTO.tematica = "AVENTURAS"
-    this.comicDTO.autores = "cindyDiego";
+    this.comicDTO.autores = "Pedrito Barrera";
     this.comicDTO.color = true;
 
     
     this.ejemploService.crearComic(this.comicDTO).subscribe(respuesta => {
       console.log(respuesta);
     });
-
    
+    let objetocomic1 = {
+     id : 1,
+     nombre : "Capitan America", 
+     editorial : "Marvel",
+     temática : "acción",
+     númeropaginas : "50",
+     precio : "60,500.99",
+     autores : "Pedrito Barrera",
+     color : "true",
+     fechaventa : 10-10-2019,
+     estado : "Activo"
+
+    }
+    let objetocomic2 = {
+      id : 2,
+      nombre : "Iron man", 
+      editorial : "Marvel",
+      temática : "acción",
+      númeropaginas : "50",
+      precio : "60,500.99",
+      autores : "Pedrito Barrera",
+      color : "true",
+      fechaventa : 10-10-2019,
+      estado : "Activo"
+ 
+     }
+
+     let objetocomic3 = {
+      id : 3,
+      nombre : "Thor", 
+      editorial : "Marvel",
+      temática : "acción",
+      númeropaginas : "50",
+      precio : "60,500.99",
+      autores : "Pedrito Barrera",
+      color : "true",
+      fechaventa : 10-10-2019,
+      estado : "Activo"
+ 
+     }
+
+     let objetocomic4 = {
+      id : 4,
+      nombre : "Bruce Banner", 
+      editorial : "Marvel",
+      temática : "acción",
+      númeropaginas : "50",
+      precio : "60,500.99",
+      autores : "Pedrito Barrera",
+      color : "true",
+      fechaventa : 10-10-2019,
+      estado : "Activo"
+ 
+     }
+
+     let objetocomic5 = {
+      id : 5,
+      nombre : "Spiderman", 
+      editorial : "Marvel",
+      temática : "acción",
+      númeropaginas : "50",
+      precio : "60,500.99",
+      autores : "Pedrito Barrera",
+      color : "true",
+      fechaventa : 10-10-2019,
+      estado : "Activo"
+ 
+     }
+   
+    this.lista = new Array<any>();
+    this.lista.push(objetocomic1);
+    this.lista.push(objetocomic2);
+    this.lista.push(objetocomic3);
+    this.lista.push(objetocomic4);
+    this.lista.push(objetocomic5);
+
+    this.listaJson = JSON.stringify(this.lista);
+
+    delete objetocomic1.edad;
+
   }
 
   public ejecucionEventoClick( parametroEvento : any, numero : number ) : void {
